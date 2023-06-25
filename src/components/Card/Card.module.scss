@@ -1,0 +1,28 @@
+.card {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 250px;
+    border: solid 1px #ded9d9;
+    padding: 20px;
+    border-radius: 6px;
+    transition: 0.3s;
+    &:hover {
+        -webkit-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+    &__title {
+        margin-bottom: 5px;
+    }
+    &__text {}
+    &__link {
+        color: #00579E;
+        &_red {
+            color: #C03230;
+        }
+    }
+    .default_link {
+        text-decoration: none;
+    }
+}
+
