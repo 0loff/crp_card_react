@@ -1,29 +1,41 @@
 import cls from './Card.module.scss'
 
-export default function Card(props) {
+const Card = (props) => {
+    const {
+        id,
+        title,
+        linkTitle,
+        href,
+        text = '',
+        onClick
+    } = props;
 
     const linkClasses = [
         cls.default_link,
         cls.card__link
     ]
 
-    if (props.id === 1) {
+    if (id === 1) {
         linkClasses.push(cls.card__link_red)
     }
 
     return (
         <div className={cls.card}>
-            <div className={cls.card__title}>{props.title.en}</div>
-            <div className={cls.card__text}>{props.text}</div>
+            <div className={cls.card__title}>{title.en}</div>
+            <div className={cls.card__text}>
+                {text ? text.slice(0, 50) : ''}
+            </div>
             <a
                 className={linkClasses.join(' ')}
-                target={props.id === 1 ? '_blank' : ''}
-                rel={props.rel}
-                href={props.href}
-                onClick={props.onClick}
+                target={id === 1 ? '_blank' : ''}
+                rel={id === 1 ? 'noreferrer' : ''}
+                href={href}
+                onClick={onClick}
             >
-                {props.linkTitle}
+                {linkTitle}
             </a>
         </div>
     );
 }
+
+export default Card;

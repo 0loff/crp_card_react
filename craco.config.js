@@ -9,4 +9,12 @@ module.exports = {
             '@api': resolvePath('./src/api')
         }
     },
+    jest: {
+        configure: {
+            moduleNameMapper: {
+                '^@components(.*)$': '<rootDir>/src/components$1',
+                '^@api(.*)$': '<rootDir>/src/api$1',
+            },
+        },
+    },
 }
